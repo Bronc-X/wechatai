@@ -1,0 +1,99 @@
+{
+  "version": 1,
+  "projects": [
+    {
+      "id": "ecd68806-79ed-48fa-b19f-354d4146b84b",
+      "section": "report",
+      "createdAt": "2026-06-08T15:06:39.363Z",
+      "updatedAt": "2026-06-08T15:16:18.749Z",
+      "client": {
+        "name": "烟测医美预约小程序",
+        "industry": "医美预约",
+        "goal": "提升咨询预约转化",
+        "owner": "Agent-ready FDE",
+        "summary": "当前瓶颈是项目价格、可约时间和支付前确认没有结构化，Agent 无法稳定完成预约闭环。",
+        "currentPath": "用户进入小程序后查看项目详情，填写手机号，选择门店和时间，再等待客服确认。",
+        "businessValue": "高客单咨询场景，单次预约价值高，适合优先做 Agent-ready 改造。"
+      },
+      "answers": {
+        "data": {
+          "score": "2",
+          "evidence": "项目价格和可约时间只展示在页面文案里，没有结构化接口。",
+          "risk": "Agent 无法可靠筛选可预约项目。",
+          "priority": "P0",
+          "action": "整理项目、价格、门店、时间字段，并暴露服务目录接口。"
+        },
+        "intent": {
+          "score": "",
+          "evidence": "",
+          "risk": "",
+          "priority": "P2",
+          "action": ""
+        },
+        "flow": {
+          "score": "",
+          "evidence": "",
+          "risk": "",
+          "priority": "P2",
+          "action": ""
+        },
+        "realtime": {
+          "score": "",
+          "evidence": "",
+          "risk": "",
+          "priority": "P2",
+          "action": ""
+        },
+        "auth": {
+          "score": "",
+          "evidence": "",
+          "risk": "",
+          "priority": "P2",
+          "action": ""
+        },
+        "confirm": {
+          "score": "1",
+          "evidence": "预约提交前没有统一确认金额、门店、时间和取消规则。",
+          "risk": "支付或预约动作容易出现误提交。",
+          "priority": "P0",
+          "action": "新增支付/预约前确认页。"
+        },
+        "recovery": {
+          "score": "",
+          "evidence": "",
+          "risk": "",
+          "priority": "P2",
+          "action": ""
+        },
+        "after": {
+          "score": "",
+          "evidence": "",
+          "risk": "",
+          "priority": "P2",
+          "action": ""
+        },
+        "ui": {
+          "score": "2",
+          "evidence": "页面表单字段密集，移动端确认状态弱。",
+          "risk": "用户完成率和 Agent 可控性都偏低。",
+          "priority": "P1",
+          "action": "重做关键页面层级，减少人工填写字段。"
+        }
+      },
+      "evidence": {
+        "pages": [
+          {
+            "id": "99836143-c7ca-44e2-93af-aee24b46fb66",
+            "name": "项目详情页",
+            "path": "/pages/project/detail",
+            "finding": "价格和预约时间混在图文描述中",
+            "impact": "Agent 无法读取可约状态"
+          }
+        ],
+        "flows": [],
+        "data": [],
+        "permissions": []
+      }
+    }
+  ]
+}

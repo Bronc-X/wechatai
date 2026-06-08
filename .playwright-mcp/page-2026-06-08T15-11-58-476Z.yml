@@ -1,0 +1,381 @@
+- generic [ref=e2]:
+  - complementary [ref=e3]:
+    - generic [ref=e4]:
+      - generic [ref=e5]: AR
+      - heading "Agent-ready 交付包" [level=1] [ref=e6]
+      - paragraph [ref=e7]: 客户报告、风险清单、行动方案、支撑证据。
+    - generic [ref=e8]:
+      - button "交付封面 客户、目标、摘要" [ref=e9] [cursor=pointer]:
+        - strong [ref=e10]: 交付封面
+        - generic [ref=e11]: 客户、目标、摘要
+      - button "诊断评分 9 项 Agent-ready 评估" [ref=e12] [cursor=pointer]:
+        - strong [ref=e13]: 诊断评分
+        - generic [ref=e14]: 9 项 Agent-ready 评估
+      - button "行动清单 风险、优先级、下一步" [ref=e15] [cursor=pointer]:
+        - strong [ref=e16]: 行动清单
+        - generic [ref=e17]: 风险、优先级、下一步
+      - button "证据附录 页面、流程、数据、权限" [ref=e18] [cursor=pointer]:
+        - strong [ref=e19]: 证据附录
+        - generic [ref=e20]: 页面、流程、数据、权限
+      - button "报告导出 Markdown / JSON" [ref=e21] [cursor=pointer]:
+        - strong [ref=e22]: 报告导出
+        - generic [ref=e23]: Markdown / JSON
+      - generic [ref=e24]: 后端已连接
+    - generic [ref=e26]:
+      - button "新建交付包" [ref=e27] [cursor=pointer]
+      - button "导入 JSON" [ref=e28] [cursor=pointer]
+  - main [ref=e29]:
+    - generic [ref=e30]:
+      - generic [ref=e31]:
+        - generic [ref=e32]:
+          - generic [ref=e33]: Client Deliverable
+          - heading "烟测医美预约小程序 Agent-ready 改造交付包" [level=2] [ref=e34]
+        - generic [ref=e35]:
+          - generic [ref=e36]: 医美预约
+          - generic [ref=e37]: 提升咨询预约转化
+          - generic [ref=e38]: 2026/6/8
+      - generic [ref=e39]:
+        - generic [ref=e40]:
+          - generic [ref=e41]: Readiness Score
+          - generic [ref=e42]:
+            - strong [ref=e43]: "14"
+            - generic [ref=e44]: "%"
+        - generic [ref=e45]: 基础未就绪
+    - generic [ref=e49]:
+      - generic [ref=e50]:
+        - generic [ref=e52]:
+          - heading "Agent-ready 评分" [level=3] [ref=e53]
+          - paragraph [ref=e54]: 每一项都要能落到证据和行动。
+        - generic [ref=e55]:
+          - generic [ref=e56]:
+            - generic [ref=e57]:
+              - generic [ref=e58]:
+                - generic [ref=e59]: 业务数据结构化
+                - generic [ref=e60]: 商品/服务、价格、库存、门店、时间、服务条件是否机器可读。
+              - generic [ref=e61]:
+                - text: 分数
+                - combobox "分数" [ref=e62]:
+                  - option "未评"
+                  - option "0/5"
+                  - option "1/5"
+                  - option "2/5" [selected]
+                  - option "3/5"
+                  - option "4/5"
+                  - option "5/5"
+            - generic [ref=e63]:
+              - generic [ref=e64]:
+                - text: 证据
+                - textbox "证据" [ref=e65]:
+                  - /placeholder: 页面、接口、截图、访谈记录
+                  - text: 项目价格和可约时间只展示在页面文案里，没有结构化接口。
+              - generic [ref=e66]:
+                - text: 风险
+                - textbox "风险" [ref=e67]:
+                  - /placeholder: 对成交/调用的影响
+                  - text: Agent 无法可靠筛选可预约项目。
+              - generic [ref=e68]:
+                - text: 优先级
+                - combobox "优先级" [ref=e69]:
+                  - option "P0" [selected]
+                  - option "P1"
+                  - option "P2"
+              - generic [ref=e70]:
+                - text: 行动
+                - textbox "行动" [ref=e71]:
+                  - /placeholder: 整理服务 schema，补齐可读字段和接口。
+                  - text: 整理项目、价格、门店、时间字段，并暴露服务目录接口。
+          - generic [ref=e72]:
+            - generic [ref=e73]:
+              - generic [ref=e74]:
+                - generic [ref=e75]: 用户意图映射
+                - generic [ref=e76]: 预算、距离、时间、偏好、禁忌能否转成筛选条件。
+              - generic [ref=e77]:
+                - text: 分数
+                - combobox "分数" [ref=e78]:
+                  - option "未评" [selected]
+                  - option "0/5"
+                  - option "1/5"
+                  - option "2/5"
+                  - option "3/5"
+                  - option "4/5"
+                  - option "5/5"
+            - generic [ref=e79]:
+              - generic [ref=e80]:
+                - text: 证据
+                - textbox "证据" [ref=e81]:
+                  - /placeholder: 页面、接口、截图、访谈记录
+              - generic [ref=e82]:
+                - text: 风险
+                - textbox "风险" [ref=e83]:
+                  - /placeholder: 对成交/调用的影响
+              - generic [ref=e84]:
+                - text: 优先级
+                - combobox "优先级" [ref=e85]:
+                  - option "P0"
+                  - option "P1"
+                  - option "P2" [selected]
+              - generic [ref=e86]:
+                - text: 行动
+                - textbox "行动" [ref=e87]:
+                  - /placeholder: 建立意图词典、参数映射和缺失字段追问。
+          - generic [ref=e88]:
+            - generic [ref=e89]:
+              - generic [ref=e90]:
+                - generic [ref=e91]: 关键流程短链路
+                - generic [ref=e92]: 查询、选择、确认、提交、支付路径是否足够短。
+              - generic [ref=e93]:
+                - text: 分数
+                - combobox "分数" [ref=e94]:
+                  - option "未评" [selected]
+                  - option "0/5"
+                  - option "1/5"
+                  - option "2/5"
+                  - option "3/5"
+                  - option "4/5"
+                  - option "5/5"
+            - generic [ref=e95]:
+              - generic [ref=e96]:
+                - text: 证据
+                - textbox "证据" [ref=e97]:
+                  - /placeholder: 页面、接口、截图、访谈记录
+              - generic [ref=e98]:
+                - text: 风险
+                - textbox "风险" [ref=e99]:
+                  - /placeholder: 对成交/调用的影响
+              - generic [ref=e100]:
+                - text: 优先级
+                - combobox "优先级" [ref=e101]:
+                  - option "P0"
+                  - option "P1"
+                  - option "P2" [selected]
+              - generic [ref=e102]:
+                - text: 行动
+                - textbox "行动" [ref=e103]:
+                  - /placeholder: 收敛为候选方案、确认、提交三段式流程。
+          - generic [ref=e104]:
+            - generic [ref=e105]:
+              - generic [ref=e106]:
+                - generic [ref=e107]: 实时状态可信
+                - generic [ref=e108]: 价格、库存、号源、排班、门店营业状态是否实时。
+              - generic [ref=e109]:
+                - text: 分数
+                - combobox "分数" [ref=e110]:
+                  - option "未评" [selected]
+                  - option "0/5"
+                  - option "1/5"
+                  - option "2/5"
+                  - option "3/5"
+                  - option "4/5"
+                  - option "5/5"
+            - generic [ref=e111]:
+              - generic [ref=e112]:
+                - text: 证据
+                - textbox "证据" [ref=e113]:
+                  - /placeholder: 页面、接口、截图、访谈记录
+              - generic [ref=e114]:
+                - text: 风险
+                - textbox "风险" [ref=e115]:
+                  - /placeholder: 对成交/调用的影响
+              - generic [ref=e116]:
+                - text: 优先级
+                - combobox "优先级" [ref=e117]:
+                  - option "P0"
+                  - option "P1"
+                  - option "P2" [selected]
+              - generic [ref=e118]:
+                - text: 行动
+                - textbox "行动" [ref=e119]:
+                  - /placeholder: 接入实时价格、排班、库存和营业状态。
+          - generic [ref=e120]:
+            - generic [ref=e121]:
+              - generic [ref=e122]:
+                - generic [ref=e123]: 授权边界清楚
+                - generic [ref=e124]: 手机号、定位、联系人、健康信息等权限是否在正确节点出现。
+              - generic [ref=e125]:
+                - text: 分数
+                - combobox "分数" [ref=e126]:
+                  - option "未评" [selected]
+                  - option "0/5"
+                  - option "1/5"
+                  - option "2/5"
+                  - option "3/5"
+                  - option "4/5"
+                  - option "5/5"
+            - generic [ref=e127]:
+              - generic [ref=e128]:
+                - text: 证据
+                - textbox "证据" [ref=e129]:
+                  - /placeholder: 页面、接口、截图、访谈记录
+              - generic [ref=e130]:
+                - text: 风险
+                - textbox "风险" [ref=e131]:
+                  - /placeholder: 对成交/调用的影响
+              - generic [ref=e132]:
+                - text: 优先级
+                - combobox "优先级" [ref=e133]:
+                  - option "P0"
+                  - option "P1"
+                  - option "P2" [selected]
+              - generic [ref=e134]:
+                - text: 行动
+                - textbox "行动" [ref=e135]:
+                  - /placeholder: 把授权放在必要节点，并保留失败后的继续路径。
+          - generic [ref=e136]:
+            - generic [ref=e137]:
+              - generic [ref=e138]:
+                - generic [ref=e139]: 支付/预约前确认
+                - generic [ref=e140]: 金额、门店、时间、服务内容、取消规则是否集中确认。
+              - generic [ref=e141]:
+                - text: 分数
+                - combobox "分数" [ref=e142]:
+                  - option "未评"
+                  - option "0/5"
+                  - option "1/5" [selected]
+                  - option "2/5"
+                  - option "3/5"
+                  - option "4/5"
+                  - option "5/5"
+            - generic [ref=e143]:
+              - generic [ref=e144]:
+                - text: 证据
+                - textbox "证据" [ref=e145]:
+                  - /placeholder: 页面、接口、截图、访谈记录
+                  - text: 预约提交前没有统一确认金额、门店、时间和取消规则。
+              - generic [ref=e146]:
+                - text: 风险
+                - textbox "风险" [ref=e147]:
+                  - /placeholder: 对成交/调用的影响
+                  - text: 支付或预约动作容易出现误提交。
+              - generic [ref=e148]:
+                - text: 优先级
+                - combobox "优先级" [ref=e149]:
+                  - option "P0" [selected]
+                  - option "P1"
+                  - option "P2"
+              - generic [ref=e150]:
+                - text: 行动
+                - textbox "行动" [ref=e151]:
+                  - /placeholder: 建立统一确认页，关键动作必须用户确认。
+                  - text: 新增支付/预约前确认页。
+          - generic [ref=e152]:
+            - generic [ref=e153]:
+              - generic [ref=e154]:
+                - generic [ref=e155]: 异常恢复
+                - generic [ref=e156]: 无库存、时间冲突、支付失败、优惠不可用时是否有替代方案。
+              - generic [ref=e157]:
+                - text: 分数
+                - combobox "分数" [ref=e158]:
+                  - option "未评" [selected]
+                  - option "0/5"
+                  - option "1/5"
+                  - option "2/5"
+                  - option "3/5"
+                  - option "4/5"
+                  - option "5/5"
+            - generic [ref=e159]:
+              - generic [ref=e160]:
+                - text: 证据
+                - textbox "证据" [ref=e161]:
+                  - /placeholder: 页面、接口、截图、访谈记录
+              - generic [ref=e162]:
+                - text: 风险
+                - textbox "风险" [ref=e163]:
+                  - /placeholder: 对成交/调用的影响
+              - generic [ref=e164]:
+                - text: 优先级
+                - combobox "优先级" [ref=e165]:
+                  - option "P0"
+                  - option "P1"
+                  - option "P2" [selected]
+              - generic [ref=e166]:
+                - text: 行动
+                - textbox "行动" [ref=e167]:
+                  - /placeholder: 设计替代方案、草稿保留和人工兜底。
+          - generic [ref=e168]:
+            - generic [ref=e169]:
+              - generic [ref=e170]:
+                - generic [ref=e171]: 售后与订单状态
+                - generic [ref=e172]: 改约、取消、退款、联系客服是否清晰可执行。
+              - generic [ref=e173]:
+                - text: 分数
+                - combobox "分数" [ref=e174]:
+                  - option "未评" [selected]
+                  - option "0/5"
+                  - option "1/5"
+                  - option "2/5"
+                  - option "3/5"
+                  - option "4/5"
+                  - option "5/5"
+            - generic [ref=e175]:
+              - generic [ref=e176]:
+                - text: 证据
+                - textbox "证据" [ref=e177]:
+                  - /placeholder: 页面、接口、截图、访谈记录
+              - generic [ref=e178]:
+                - text: 风险
+                - textbox "风险" [ref=e179]:
+                  - /placeholder: 对成交/调用的影响
+              - generic [ref=e180]:
+                - text: 优先级
+                - combobox "优先级" [ref=e181]:
+                  - option "P0"
+                  - option "P1"
+                  - option "P2" [selected]
+              - generic [ref=e182]:
+                - text: 行动
+                - textbox "行动" [ref=e183]:
+                  - /placeholder: 补齐订单状态和售后动作。
+          - generic [ref=e184]:
+            - generic [ref=e185]:
+              - generic [ref=e186]:
+                - generic [ref=e187]: 页面与表单体验
+                - generic [ref=e188]: 视觉是否可信，表单是否过重，移动端状态是否完整。
+              - generic [ref=e189]:
+                - text: 分数
+                - combobox "分数" [ref=e190]:
+                  - option "未评"
+                  - option "0/5"
+                  - option "1/5"
+                  - option "2/5" [selected]
+                  - option "3/5"
+                  - option "4/5"
+                  - option "5/5"
+            - generic [ref=e191]:
+              - generic [ref=e192]:
+                - text: 证据
+                - textbox "证据" [ref=e193]:
+                  - /placeholder: 页面、接口、截图、访谈记录
+                  - text: 页面表单字段密集，移动端确认状态弱。
+              - generic [ref=e194]:
+                - text: 风险
+                - textbox "风险" [ref=e195]:
+                  - /placeholder: 对成交/调用的影响
+                  - text: 用户完成率和 Agent 可控性都偏低。
+              - generic [ref=e196]:
+                - text: 优先级
+                - combobox "优先级" [ref=e197]:
+                  - option "P0"
+                  - option "P1" [selected]
+                  - option "P2"
+              - generic [ref=e198]:
+                - text: 行动
+                - textbox "行动" [ref=e199]:
+                  - /placeholder: 重做关键页面层级，减少字段，补齐状态反馈。
+                  - text: 重做关键页面层级，减少人工填写字段。
+      - generic [ref=e200]:
+        - generic [ref=e202]:
+          - heading "真实工具接口" [level=3] [ref=e203]
+          - paragraph [ref=e204]: 这里只展示可接入能力，未接入上游就不产出结果。
+        - generic [ref=e205]:
+          - generic [ref=e206]:
+            - strong [ref=e207]: 微信小程序源码与页面结构分析
+            - paragraph [ref=e208]: 未配置：WECHAT_MINIPROGRAM_APPID, WECHAT_MINIPROGRAM_ACCESS_TOKEN
+          - generic [ref=e209]:
+            - strong [ref=e210]: 商品/服务目录结构化
+            - paragraph [ref=e211]: 未配置：CATALOG_API_BASE_URL, CATALOG_API_TOKEN
+          - generic [ref=e212]:
+            - strong [ref=e213]: 预约/号源实时状态
+            - paragraph [ref=e214]: 未配置：BOOKING_API_BASE_URL, BOOKING_API_TOKEN
+          - generic [ref=e215]:
+            - strong [ref=e216]: 小程序 UI 体验升级审查
+            - paragraph [ref=e217]: 未配置：DESIGN_AUDIT_PROVIDER, DESIGN_AUDIT_API_KEY

@@ -1,0 +1,68 @@
+- generic [ref=e2]:
+  - complementary [ref=e3]:
+    - generic [ref=e4]:
+      - generic [ref=e5]: AR
+      - heading "Agent-ready 交付包" [level=1] [ref=e6]
+      - paragraph [ref=e7]: 客户报告、风险清单、行动方案、支撑证据。
+    - generic [ref=e8]:
+      - button "交付封面 客户、目标、摘要" [ref=e83] [cursor=pointer]:
+        - strong [ref=e84]: 交付封面
+        - generic [ref=e85]: 客户、目标、摘要
+      - button "诊断评分 9 项 Agent-ready 评估" [ref=e86] [cursor=pointer]:
+        - strong [ref=e87]: 诊断评分
+        - generic [ref=e88]: 9 项 Agent-ready 评估
+      - button "行动清单 风险、优先级、下一步" [ref=e89] [cursor=pointer]:
+        - strong [ref=e90]: 行动清单
+        - generic [ref=e91]: 风险、优先级、下一步
+      - button "证据附录 页面、流程、数据、权限" [ref=e92] [cursor=pointer]:
+        - strong [ref=e93]: 证据附录
+        - generic [ref=e94]: 页面、流程、数据、权限
+      - button "报告导出 Markdown / JSON" [ref=e95] [cursor=pointer]:
+        - strong [ref=e96]: 报告导出
+        - generic [ref=e97]: Markdown / JSON
+      - generic [ref=e98]: 已保存 23:14
+    - generic [ref=e26]:
+      - button "新建交付包" [ref=e27] [cursor=pointer]
+      - button "导入 JSON" [ref=e28] [cursor=pointer]
+  - main [ref=e29]:
+    - generic [ref=e30]:
+      - generic [ref=e31]:
+        - generic [ref=e32]:
+          - generic [ref=e33]: Client Deliverable
+          - heading "烟测医美预约小程序 Agent-ready 改造交付包" [level=2] [ref=e34]
+        - generic [ref=e35]:
+          - generic [ref=e36]: 医美预约
+          - generic [ref=e37]: 提升咨询预约转化
+          - generic [ref=e38]: 2026/6/8
+      - generic [ref=e39]:
+        - generic [ref=e40]:
+          - generic [ref=e41]: Readiness Score
+          - generic [ref=e42]:
+            - strong [ref=e43]: "14"
+            - generic [ref=e44]: "%"
+        - generic [ref=e45]: 基础未就绪
+    - generic [ref=e99]:
+      - generic [ref=e101]:
+        - heading "支撑证据" [level=3] [ref=e102]
+        - paragraph [ref=e103]: 这部分是附录，不抢报告主线。
+      - generic [ref=e104]:
+        - generic [ref=e105]:
+          - generic [ref=e106]:
+            - heading "页面证据" [level=3] [ref=e108]
+            - button "新增" [ref=e109] [cursor=pointer]
+          - generic [ref=e111]: 暂无记录。
+        - generic [ref=e112]:
+          - generic [ref=e113]:
+            - heading "流程证据" [level=3] [ref=e115]
+            - button "新增" [ref=e116] [cursor=pointer]
+          - generic [ref=e118]: 暂无记录。
+        - generic [ref=e119]:
+          - generic [ref=e120]:
+            - heading "数据证据" [level=3] [ref=e122]
+            - button "新增" [ref=e123] [cursor=pointer]
+          - generic [ref=e125]: 暂无记录。
+        - generic [ref=e126]:
+          - generic [ref=e127]:
+            - heading "权限证据" [level=3] [ref=e129]
+            - button "新增" [ref=e130] [cursor=pointer]
+          - generic [ref=e132]: 暂无记录。

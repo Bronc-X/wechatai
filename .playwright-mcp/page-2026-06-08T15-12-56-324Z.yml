@@ -1,0 +1,87 @@
+- generic [ref=e2]:
+  - complementary [ref=e3]:
+    - generic [ref=e4]:
+      - generic [ref=e5]: AR
+      - heading "Agent-ready 交付包" [level=1] [ref=e6]
+      - paragraph [ref=e7]: 客户报告、风险清单、行动方案、支撑证据。
+    - generic [ref=e8]:
+      - button "交付封面 客户、目标、摘要" [ref=e218] [cursor=pointer]:
+        - strong [ref=e219]: 交付封面
+        - generic [ref=e220]: 客户、目标、摘要
+      - button "诊断评分 9 项 Agent-ready 评估" [ref=e221] [cursor=pointer]:
+        - strong [ref=e222]: 诊断评分
+        - generic [ref=e223]: 9 项 Agent-ready 评估
+      - button "行动清单 风险、优先级、下一步" [ref=e224] [cursor=pointer]:
+        - strong [ref=e225]: 行动清单
+        - generic [ref=e226]: 风险、优先级、下一步
+      - button "证据附录 页面、流程、数据、权限" [ref=e227] [cursor=pointer]:
+        - strong [ref=e228]: 证据附录
+        - generic [ref=e229]: 页面、流程、数据、权限
+      - button "报告导出 Markdown / JSON" [ref=e230] [cursor=pointer]:
+        - strong [ref=e231]: 报告导出
+        - generic [ref=e232]: Markdown / JSON
+      - generic [ref=e233]: 已保存 23:12
+    - generic [ref=e26]:
+      - button "新建交付包" [ref=e27] [cursor=pointer]
+      - button "导入 JSON" [ref=e28] [cursor=pointer]
+  - main [ref=e29]:
+    - generic [ref=e30]:
+      - generic [ref=e31]:
+        - generic [ref=e32]:
+          - generic [ref=e33]: Client Deliverable
+          - heading "烟测医美预约小程序 Agent-ready 改造交付包" [level=2] [ref=e34]
+        - generic [ref=e35]:
+          - generic [ref=e36]: 医美预约
+          - generic [ref=e37]: 提升咨询预约转化
+          - generic [ref=e38]: 2026/6/8
+      - generic [ref=e39]:
+        - generic [ref=e40]:
+          - generic [ref=e41]: Readiness Score
+          - generic [ref=e42]:
+            - strong [ref=e43]: "14"
+            - generic [ref=e44]: "%"
+        - generic [ref=e45]: 基础未就绪
+    - generic [ref=e269]:
+      - generic [ref=e271]:
+        - heading "支撑证据" [level=3] [ref=e272]
+        - paragraph [ref=e273]: 这部分是附录，不抢报告主线。
+      - generic [ref=e274]:
+        - generic [ref=e275]:
+          - generic [ref=e276]:
+            - heading "页面证据" [level=3] [ref=e278]
+            - button "新增" [ref=e279] [cursor=pointer]
+          - table [ref=e281]:
+            - rowgroup [ref=e282]:
+              - row "页面 路径 发现 影响 操作" [ref=e283]:
+                - columnheader "页面" [ref=e284]
+                - columnheader "路径" [ref=e285]
+                - columnheader "发现" [ref=e286]
+                - columnheader "影响" [ref=e287]
+                - columnheader "操作" [ref=e288]
+            - rowgroup [ref=e289]:
+              - row "删除" [ref=e290]:
+                - cell [ref=e291]:
+                  - textbox [ref=e292]
+                - cell [ref=e293]:
+                  - textbox [ref=e294]
+                - cell [ref=e295]:
+                  - textbox [ref=e296]
+                - cell [ref=e297]:
+                  - textbox [ref=e298]
+                - cell "删除" [ref=e299]:
+                  - button "删除" [ref=e300] [cursor=pointer]
+        - generic [ref=e301]:
+          - generic [ref=e302]:
+            - heading "流程证据" [level=3] [ref=e304]
+            - button "新增" [ref=e305] [cursor=pointer]
+          - generic [ref=e307]: 暂无记录。
+        - generic [ref=e308]:
+          - generic [ref=e309]:
+            - heading "数据证据" [level=3] [ref=e311]
+            - button "新增" [ref=e312] [cursor=pointer]
+          - generic [ref=e314]: 暂无记录。
+        - generic [ref=e315]:
+          - generic [ref=e316]:
+            - heading "权限证据" [level=3] [ref=e318]
+            - button "新增" [ref=e319] [cursor=pointer]
+          - generic [ref=e321]: 暂无记录。

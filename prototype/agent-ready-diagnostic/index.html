@@ -1,0 +1,518 @@
+<!doctype html>
+<html lang="zh-CN">
+  <head>
+    <meta charset="utf-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1" />
+    <title>Agent-ready 交付包</title>
+    <link rel="icon" href="data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 64 64'%3E%3Crect width='64' height='64' rx='12' fill='%231f2937'/%3E%3Cpath d='M18 18h28v28H18z' fill='%23f8f3e7'/%3E%3Cpath d='M24 27h16M24 34h12M24 41h18' stroke='%231f2937' stroke-width='3' stroke-linecap='round'/%3E%3C/svg%3E" />
+    <style>
+      :root {
+        --bg: #ece8df;
+        --paper: #fffaf0;
+        --paper-2: #f7efe0;
+        --ink: #1f2522;
+        --muted: #69726c;
+        --line: #d7ccba;
+        --line-2: #b8aa94;
+        --dark: #202722;
+        --green: #0f766e;
+        --amber: #a15c07;
+        --red: #a83224;
+        --blue: #244f9e;
+        --shadow: 0 20px 56px rgba(33, 37, 33, 0.13);
+      }
+
+      * { box-sizing: border-box; }
+
+      body {
+        margin: 0;
+        background: var(--bg);
+        color: var(--ink);
+        font-family: ui-sans-serif, system-ui, -apple-system, BlinkMacSystemFont,
+          "Segoe UI", "PingFang SC", "Microsoft YaHei", sans-serif;
+        line-height: 1.45;
+      }
+
+      button, input, select, textarea { font: inherit; }
+      button { cursor: pointer; }
+      h1, h2, h3, p { margin: 0; }
+
+      .app {
+        min-height: 100vh;
+        display: grid;
+        grid-template-columns: 280px minmax(0, 1fr);
+      }
+
+      .nav {
+        background: var(--dark);
+        color: #fff8ec;
+        padding: 22px;
+        display: grid;
+        grid-template-rows: auto auto minmax(0, 1fr) auto;
+        gap: 18px;
+      }
+
+      .brand {
+        display: grid;
+        gap: 10px;
+      }
+
+      .mark {
+        width: 44px;
+        height: 44px;
+        border: 1px solid rgba(255,255,255,.3);
+        border-radius: 6px;
+        display: grid;
+        place-items: center;
+        font-weight: 950;
+      }
+
+      .brand h1 {
+        font-size: 24px;
+        line-height: 1.1;
+        letter-spacing: 0;
+      }
+
+      .brand p {
+        color: #c8c2b6;
+        font-size: 12px;
+      }
+
+      .nav-steps {
+        display: grid;
+        gap: 8px;
+      }
+
+      .nav-btn {
+        width: 100%;
+        border: 1px solid rgba(255,255,255,.14);
+        background: rgba(255,255,255,.05);
+        color: #fff8ec;
+        border-radius: 8px;
+        padding: 11px;
+        text-align: left;
+        display: grid;
+        gap: 3px;
+      }
+
+      .nav-btn.active {
+        background: rgba(255,250,240,.14);
+        border-color: #fff3d4;
+      }
+
+      .nav-btn strong { font-size: 13px; }
+      .nav-btn span { color: #c8c2b6; font-size: 12px; }
+
+      .nav-actions {
+        display: grid;
+        gap: 8px;
+      }
+
+      .main {
+        min-width: 0;
+        padding: 26px;
+        display: grid;
+        gap: 18px;
+      }
+
+      .cover {
+        background: var(--paper);
+        border: 1px solid var(--line);
+        border-radius: 8px;
+        box-shadow: var(--shadow);
+        min-height: 260px;
+        display: grid;
+        grid-template-columns: minmax(0, 1fr) 330px;
+        overflow: hidden;
+      }
+
+      .cover-main {
+        padding: 30px;
+        display: grid;
+        align-content: space-between;
+        gap: 24px;
+      }
+
+      .kicker {
+        font-size: 12px;
+        font-weight: 950;
+        letter-spacing: .05em;
+        color: var(--green);
+        text-transform: uppercase;
+      }
+
+      .cover h2 {
+        margin-top: 8px;
+        font-size: 42px;
+        line-height: 1.06;
+        letter-spacing: 0;
+        max-width: 860px;
+      }
+
+      .cover-meta {
+        display: flex;
+        flex-wrap: wrap;
+        gap: 10px;
+      }
+
+      .tag {
+        display: inline-flex;
+        align-items: center;
+        min-height: 28px;
+        border: 1px solid var(--line);
+        border-radius: 999px;
+        padding: 0 10px;
+        color: #4d554f;
+        background: #fffdf8;
+        font-size: 12px;
+        font-weight: 800;
+      }
+
+      .score-card {
+        background: #1f2522;
+        color: #fff8ec;
+        padding: 28px;
+        display: grid;
+        align-content: center;
+        gap: 18px;
+      }
+
+      .score-line {
+        display: flex;
+        align-items: end;
+        gap: 8px;
+      }
+
+      .score-line strong {
+        font-size: 76px;
+        line-height: .9;
+      }
+
+      .score-line span {
+        color: #c8c2b6;
+        font-weight: 850;
+        padding-bottom: 7px;
+      }
+
+      .status {
+        width: fit-content;
+        min-height: 34px;
+        display: inline-flex;
+        align-items: center;
+        border-radius: 8px;
+        padding: 0 11px;
+        background: var(--green);
+        color: white;
+        font-weight: 900;
+      }
+
+      .progress {
+        height: 10px;
+        background: rgba(255,255,255,.18);
+        border-radius: 999px;
+        overflow: hidden;
+      }
+
+      .progress div {
+        height: 100%;
+        width: 0;
+        background: #f9d56e;
+      }
+
+      .screen { display: none; }
+      .screen.active { display: block; }
+
+      .grid {
+        display: grid;
+        grid-template-columns: minmax(0, 1fr) 360px;
+        gap: 18px;
+        align-items: start;
+      }
+
+      .panel {
+        background: var(--paper);
+        border: 1px solid var(--line);
+        border-radius: 8px;
+        box-shadow: var(--shadow);
+      }
+
+      .panel-head {
+        padding: 16px 18px 12px;
+        border-bottom: 1px solid var(--line);
+        display: flex;
+        justify-content: space-between;
+        gap: 12px;
+        align-items: start;
+      }
+
+      .panel-head h3 {
+        font-size: 18px;
+      }
+
+      .sub {
+        color: var(--muted);
+        font-size: 12px;
+        margin-top: 3px;
+      }
+
+      .content {
+        padding: 18px;
+      }
+
+      .form-grid {
+        display: grid;
+        grid-template-columns: repeat(2, minmax(0, 1fr));
+        gap: 13px;
+      }
+
+      label {
+        display: grid;
+        gap: 6px;
+        font-size: 12px;
+        font-weight: 900;
+        color: #3f4741;
+      }
+
+      input, select, textarea {
+        border: 1px solid var(--line);
+        border-radius: 7px;
+        background: #fffdf8;
+        color: var(--ink);
+        padding: 10px;
+        min-width: 0;
+      }
+
+      textarea {
+        min-height: 88px;
+        resize: vertical;
+      }
+
+      .wide { grid-column: 1 / -1; }
+
+      .btn {
+        min-height: 38px;
+        border: 1px solid var(--line-2);
+        border-radius: 8px;
+        background: var(--paper);
+        color: var(--ink);
+        padding: 0 12px;
+        font-weight: 900;
+      }
+
+      .btn.primary {
+        background: var(--dark);
+        color: #fff8ec;
+        border-color: var(--dark);
+      }
+
+      .btn.accent {
+        background: var(--green);
+        color: white;
+        border-color: var(--green);
+      }
+
+      .btn.small {
+        min-height: 32px;
+        padding: 0 9px;
+        font-size: 12px;
+      }
+
+      .btn.danger {
+        color: var(--red);
+        background: #fff3ee;
+        border-color: #f1c5bd;
+      }
+
+      .card-list {
+        display: grid;
+        gap: 12px;
+      }
+
+      .question {
+        border: 1px solid var(--line);
+        border-radius: 8px;
+        background: #fffdf8;
+        padding: 14px;
+        display: grid;
+        gap: 12px;
+      }
+
+      .question-top {
+        display: grid;
+        grid-template-columns: minmax(0, 1fr) 112px;
+        gap: 12px;
+        align-items: center;
+      }
+
+      .question-title {
+        font-size: 15px;
+        font-weight: 950;
+      }
+
+      .question-desc {
+        color: var(--muted);
+        font-size: 12px;
+        margin-top: 2px;
+      }
+
+      .subgrid {
+        display: grid;
+        grid-template-columns: repeat(2, minmax(0, 1fr));
+        gap: 10px;
+      }
+
+      .executive-list {
+        display: grid;
+        gap: 10px;
+      }
+
+      .exec-item {
+        border-left: 5px solid var(--amber);
+        background: #fff6e8;
+        border-radius: 7px;
+        padding: 12px;
+        display: grid;
+        gap: 4px;
+      }
+
+      .exec-item.p0 {
+        border-left-color: var(--red);
+        background: #fff0ec;
+      }
+
+      .exec-item strong { color: #4b2617; }
+      .exec-item p { color: #5f4c3f; font-size: 13px; }
+
+      .mini-stats {
+        display: grid;
+        grid-template-columns: repeat(2, minmax(0, 1fr));
+        gap: 10px;
+      }
+
+      .stat {
+        border: 1px solid var(--line);
+        border-radius: 8px;
+        background: var(--paper-2);
+        padding: 12px;
+        display: grid;
+        gap: 4px;
+      }
+
+      .stat strong {
+        font-size: 24px;
+      }
+
+      .stat span {
+        color: var(--muted);
+        font-size: 12px;
+      }
+
+      .table-wrap { overflow-x: auto; }
+
+      table {
+        width: 100%;
+        min-width: 760px;
+        border-collapse: collapse;
+      }
+
+      th, td {
+        border-bottom: 1px solid var(--line);
+        padding: 9px;
+        text-align: left;
+        vertical-align: top;
+      }
+
+      th {
+        background: var(--paper-2);
+        color: #4f574f;
+        font-size: 12px;
+      }
+
+      td textarea { width: 100%; min-height: 56px; }
+
+      .report {
+        white-space: pre-wrap;
+        background: #151a17;
+        color: #fff8ec;
+        border-radius: 8px;
+        padding: 16px;
+        font: 12px/1.55 ui-monospace, SFMono-Regular, Menlo, Consolas, monospace;
+        max-height: 70vh;
+        overflow: auto;
+      }
+
+      .empty {
+        border: 1px dashed var(--line-2);
+        border-radius: 8px;
+        background: #fffdf8;
+        color: var(--muted);
+        padding: 14px;
+      }
+
+      .hidden { display: none !important; }
+
+      @media (max-width: 1120px) {
+        .app { grid-template-columns: 1fr; }
+        .cover, .grid { grid-template-columns: 1fr; }
+      }
+
+      @media (max-width: 720px) {
+        .main, .nav { padding: 14px; }
+        .cover h2 { font-size: 28px; }
+        .score-line strong { font-size: 58px; }
+        .form-grid, .subgrid, .mini-stats { grid-template-columns: 1fr; }
+        .question-top { grid-template-columns: 1fr; }
+      }
+    </style>
+  </head>
+  <body>
+    <div class="app">
+      <aside class="nav">
+        <div class="brand">
+          <div class="mark">AR</div>
+          <h1>Agent-ready 交付包</h1>
+          <p>客户报告、风险清单、行动方案、支撑证据。</p>
+        </div>
+        <div class="nav-steps" id="navSteps"></div>
+        <div></div>
+        <div class="nav-actions">
+          <button class="btn accent" id="newBtn" type="button">新建交付包</button>
+          <button class="btn" id="importBtn" type="button">导入 JSON</button>
+          <input class="hidden" id="importFile" type="file" accept="application/json,.json" />
+        </div>
+      </aside>
+
+      <main class="main">
+        <section class="cover">
+          <div class="cover-main">
+            <div>
+              <div class="kicker">Client Deliverable</div>
+              <h2 id="coverTitle">未命名小程序 Agent-ready 改造交付包</h2>
+            </div>
+            <div class="cover-meta">
+              <span class="tag" id="coverIndustry">行业未填写</span>
+              <span class="tag" id="coverGoal">目标未填写</span>
+              <span class="tag" id="coverDate">今日</span>
+            </div>
+          </div>
+          <div class="score-card">
+            <div>
+              <div class="kicker" style="color:#f9d56e">Readiness Score</div>
+              <div class="score-line"><strong id="scoreValue">0</strong><span>%</span></div>
+            </div>
+            <span class="status" id="scoreLabel">待评估</span>
+            <div class="progress"><div id="scoreFill"></div></div>
+          </div>
+        </section>
+
+        <section class="screen active" id="screen-cover"></section>
+        <section class="screen" id="screen-score"></section>
+        <section class="screen" id="screen-actions"></section>
+        <section class="screen" id="screen-evidence"></section>
+        <section class="screen" id="screen-report"></section>
+      </main>
+    </div>
+
+    <script src="./app.js"></script>
+  </body>
+</html>

@@ -1,0 +1,26 @@
+- generic [ref=e2]:
+  - complementary [ref=e3]:
+    - generic [ref=e4]:
+      - generic [ref=e5]: AR
+      - heading "Agent-ready 交付包" [level=1] [ref=e6]
+      - paragraph [ref=e7]: 客户报告、风险清单、行动方案、支撑证据。
+    - generic [ref=e9]:
+      - button "新建交付包" [ref=e10] [cursor=pointer]
+      - button "导入 JSON" [ref=e11] [cursor=pointer]
+  - main [ref=e12]:
+    - generic [ref=e13]:
+      - generic [ref=e14]:
+        - generic [ref=e15]:
+          - generic [ref=e16]: Client Deliverable
+          - heading "未命名小程序 Agent-ready 改造交付包" [level=2] [ref=e17]
+        - generic [ref=e18]:
+          - generic [ref=e19]: 行业未填写
+          - generic [ref=e20]: 目标未填写
+          - generic [ref=e21]: 今日
+      - generic [ref=e22]:
+        - generic [ref=e23]:
+          - generic [ref=e24]: Readiness Score
+          - generic [ref=e25]:
+            - strong [ref=e26]: "0"
+            - generic [ref=e27]: "%"
+        - generic [ref=e28]: 待评估
