@@ -1,0 +1,416 @@
+- generic [active] [ref=e1]:
+  - banner [ref=e2]:
+    - generic [ref=e3]:
+      - generic [ref=e4]: Transformation Toolkit
+      - navigation [ref=e5]:
+        - button "Dashboard" [ref=e151] [cursor=pointer]
+        - button "Inventory" [ref=e152] [cursor=pointer]
+        - button "Archive" [ref=e153] [cursor=pointer]
+        - button "Settings" [ref=e154] [cursor=pointer]
+    - generic [ref=e10]:
+      - generic "搜索项目" [ref=e11]:
+        - generic [ref=e12]: search
+        - textbox "搜索项目" [ref=e13]:
+          - /placeholder: Search projects...
+      - button "通知" [ref=e14] [cursor=pointer]:
+        - generic [ref=e15]: notifications
+      - button "帮助" [ref=e16] [cursor=pointer]:
+        - generic [ref=e17]: help_outline
+      - generic [ref=e19]: person
+  - complementary [ref=e20]:
+    - generic [ref=e21]:
+      - generic [ref=e23]: robot_2
+      - generic [ref=e24]:
+        - heading "Mini-Program Agent" [level=1] [ref=e25]
+        - paragraph [ref=e26]: V2.4 Transformation
+    - button "add New Project" [ref=e27] [cursor=pointer]:
+      - generic [ref=e28]: add
+      - text: New Project
+    - navigation [ref=e29]:
+      - button "folder Projects" [ref=e155] [cursor=pointer]:
+        - generic [ref=e156]: folder
+        - text: Projects
+      - button "info Project File" [ref=e157] [cursor=pointer]:
+        - generic [ref=e158]: info
+        - text: Project File
+      - button "analytics Diagnostic" [ref=e159] [cursor=pointer]:
+        - generic [ref=e160]: analytics
+        - text: Diagnostic
+      - button "auto_fix_high Transformation" [ref=e161] [cursor=pointer]:
+        - generic [ref=e162]: auto_fix_high
+        - text: Transformation
+      - button "menu_book Evidence" [ref=e163] [cursor=pointer]:
+        - generic [ref=e164]: menu_book
+        - text: Evidence
+      - button "description Reports" [ref=e165] [cursor=pointer]:
+        - generic [ref=e166]: description
+        - text: Reports
+    - generic [ref=e42]:
+      - button "library_books Documentation" [ref=e43] [cursor=pointer]:
+        - generic [ref=e44]: library_books
+        - text: Documentation
+      - button "contact_support Support" [ref=e45] [cursor=pointer]:
+        - generic [ref=e46]: contact_support
+        - text: Support
+  - generic [ref=e47]:
+    - main [ref=e48]:
+      - generic [ref=e167]:
+        - generic [ref=e168]:
+          - heading "Diagnostic Workflow" [level=2] [ref=e169]
+          - paragraph [ref=e170]: Evaluate mini-program compatibility across key dimensions.
+        - button "sync Refresh Schema" [ref=e171] [cursor=pointer]:
+          - generic [ref=e172]: sync
+          - text: Refresh Schema
+      - generic [ref=e173]:
+        - article [ref=e174]:
+          - generic [ref=e175]:
+            - generic:
+              - heading "业务数据结构化 warning" [level=4]:
+                - text: 业务数据结构化
+                - generic [ref=e176]: warning
+              - paragraph: 商品/服务、价格、库存、门店、时间、服务条件是否机器可读。
+            - generic [ref=e177]:
+              - slider [ref=e178]: "2"
+              - generic [ref=e179]: "2"
+            - generic [ref=e180]:
+              - generic [ref=e181]:
+                - generic [ref=e182]: report
+                - text: High Risk
+              - combobox [ref=e183]:
+                - option "P0" [selected]
+                - option "P1"
+                - option "P2"
+          - generic [ref=e184]:
+            - generic [ref=e185]:
+              - text: 证据
+              - textbox "证据" [ref=e186]:
+                - /placeholder: 页面、接口、截图、访谈记录
+                - text: 项目价格和可约时间只展示在页面文案里，没有结构化接口。
+            - generic [ref=e187]:
+              - text: 风险
+              - textbox "风险" [ref=e188]:
+                - /placeholder: 对成交/调用的影响
+                - text: Agent 无法可靠筛选可预约项目。
+            - generic [ref=e189]:
+              - text: 行动建议
+              - textbox "行动建议" [ref=e190]:
+                - /placeholder: 整理服务 schema，补齐可读字段和接口。
+                - text: 整理项目、价格、门店、时间字段，并暴露服务目录接口。
+        - article [ref=e191]:
+          - generic [ref=e192]:
+            - generic:
+              - heading "用户意图映射 warning" [level=4]:
+                - text: 用户意图映射
+                - generic [ref=e193]: warning
+              - paragraph: 预算、距离、时间、偏好、禁忌能否转成筛选条件。
+            - generic [ref=e194]:
+              - slider [ref=e195]: "0"
+              - generic [ref=e196]: 未评
+            - generic [ref=e197]:
+              - generic [ref=e198]:
+                - generic [ref=e199]: report
+                - text: High Risk
+              - combobox [ref=e200]:
+                - option "P0"
+                - option "P1"
+                - option "P2" [selected]
+          - generic [ref=e201]:
+            - generic [ref=e202]:
+              - text: 证据
+              - textbox "证据" [ref=e203]:
+                - /placeholder: 页面、接口、截图、访谈记录
+            - generic [ref=e204]:
+              - text: 风险
+              - textbox "风险" [ref=e205]:
+                - /placeholder: 对成交/调用的影响
+            - generic [ref=e206]:
+              - text: 行动建议
+              - textbox "行动建议" [ref=e207]:
+                - /placeholder: 建立意图词典、参数映射和缺失字段追问。
+        - article [ref=e208]:
+          - generic [ref=e209]:
+            - generic:
+              - heading "关键流程短链路 warning" [level=4]:
+                - text: 关键流程短链路
+                - generic [ref=e210]: warning
+              - paragraph: 查询、选择、确认、提交、支付路径是否足够短。
+            - generic [ref=e211]:
+              - slider [ref=e212]: "0"
+              - generic [ref=e213]: 未评
+            - generic [ref=e214]:
+              - generic [ref=e215]:
+                - generic [ref=e216]: report
+                - text: High Risk
+              - combobox [ref=e217]:
+                - option "P0"
+                - option "P1"
+                - option "P2" [selected]
+          - generic [ref=e218]:
+            - generic [ref=e219]:
+              - text: 证据
+              - textbox "证据" [ref=e220]:
+                - /placeholder: 页面、接口、截图、访谈记录
+            - generic [ref=e221]:
+              - text: 风险
+              - textbox "风险" [ref=e222]:
+                - /placeholder: 对成交/调用的影响
+            - generic [ref=e223]:
+              - text: 行动建议
+              - textbox "行动建议" [ref=e224]:
+                - /placeholder: 收敛为候选方案、确认、提交三段式流程。
+        - article [ref=e225]:
+          - generic [ref=e226]:
+            - generic:
+              - heading "实时状态可信 warning" [level=4]:
+                - text: 实时状态可信
+                - generic [ref=e227]: warning
+              - paragraph: 价格、库存、号源、排班、门店营业状态是否实时。
+            - generic [ref=e228]:
+              - slider [ref=e229]: "0"
+              - generic [ref=e230]: 未评
+            - generic [ref=e231]:
+              - generic [ref=e232]:
+                - generic [ref=e233]: report
+                - text: High Risk
+              - combobox [ref=e234]:
+                - option "P0"
+                - option "P1"
+                - option "P2" [selected]
+          - generic [ref=e235]:
+            - generic [ref=e236]:
+              - text: 证据
+              - textbox "证据" [ref=e237]:
+                - /placeholder: 页面、接口、截图、访谈记录
+            - generic [ref=e238]:
+              - text: 风险
+              - textbox "风险" [ref=e239]:
+                - /placeholder: 对成交/调用的影响
+            - generic [ref=e240]:
+              - text: 行动建议
+              - textbox "行动建议" [ref=e241]:
+                - /placeholder: 接入实时价格、排班、库存和营业状态。
+        - article [ref=e242]:
+          - generic [ref=e243]:
+            - generic:
+              - heading "授权边界清楚 warning" [level=4]:
+                - text: 授权边界清楚
+                - generic [ref=e244]: warning
+              - paragraph: 手机号、定位、联系人、健康信息等权限是否在正确节点出现。
+            - generic [ref=e245]:
+              - slider [ref=e246]: "0"
+              - generic [ref=e247]: 未评
+            - generic [ref=e248]:
+              - generic [ref=e249]:
+                - generic [ref=e250]: report
+                - text: High Risk
+              - combobox [ref=e251]:
+                - option "P0"
+                - option "P1"
+                - option "P2" [selected]
+          - generic [ref=e252]:
+            - generic [ref=e253]:
+              - text: 证据
+              - textbox "证据" [ref=e254]:
+                - /placeholder: 页面、接口、截图、访谈记录
+            - generic [ref=e255]:
+              - text: 风险
+              - textbox "风险" [ref=e256]:
+                - /placeholder: 对成交/调用的影响
+            - generic [ref=e257]:
+              - text: 行动建议
+              - textbox "行动建议" [ref=e258]:
+                - /placeholder: 把授权放在必要节点，并保留失败后的继续路径。
+        - article [ref=e259]:
+          - generic [ref=e260]:
+            - generic:
+              - heading "支付/预约前确认 warning" [level=4]:
+                - text: 支付/预约前确认
+                - generic [ref=e261]: warning
+              - paragraph: 金额、门店、时间、服务内容、取消规则是否集中确认。
+            - generic [ref=e262]:
+              - slider [ref=e263]: "1"
+              - generic [ref=e264]: "1"
+            - generic [ref=e265]:
+              - generic [ref=e266]:
+                - generic [ref=e267]: report
+                - text: High Risk
+              - combobox [ref=e268]:
+                - option "P0" [selected]
+                - option "P1"
+                - option "P2"
+          - generic [ref=e269]:
+            - generic [ref=e270]:
+              - text: 证据
+              - textbox "证据" [ref=e271]:
+                - /placeholder: 页面、接口、截图、访谈记录
+                - text: 预约提交前没有统一确认金额、门店、时间和取消规则。
+            - generic [ref=e272]:
+              - text: 风险
+              - textbox "风险" [ref=e273]:
+                - /placeholder: 对成交/调用的影响
+                - text: 支付或预约动作容易出现误提交。
+            - generic [ref=e274]:
+              - text: 行动建议
+              - textbox "行动建议" [ref=e275]:
+                - /placeholder: 建立统一确认页，关键动作必须用户确认。
+                - text: 新增支付/预约前确认页。
+        - article [ref=e276]:
+          - generic [ref=e277]:
+            - generic:
+              - heading "异常恢复 warning" [level=4]:
+                - text: 异常恢复
+                - generic [ref=e278]: warning
+              - paragraph: 无库存、时间冲突、支付失败、优惠不可用时是否有替代方案。
+            - generic [ref=e279]:
+              - slider [ref=e280]: "0"
+              - generic [ref=e281]: 未评
+            - generic [ref=e282]:
+              - generic [ref=e283]:
+                - generic [ref=e284]: report
+                - text: High Risk
+              - combobox [ref=e285]:
+                - option "P0"
+                - option "P1"
+                - option "P2" [selected]
+          - generic [ref=e286]:
+            - generic [ref=e287]:
+              - text: 证据
+              - textbox "证据" [ref=e288]:
+                - /placeholder: 页面、接口、截图、访谈记录
+            - generic [ref=e289]:
+              - text: 风险
+              - textbox "风险" [ref=e290]:
+                - /placeholder: 对成交/调用的影响
+            - generic [ref=e291]:
+              - text: 行动建议
+              - textbox "行动建议" [ref=e292]:
+                - /placeholder: 设计替代方案、草稿保留和人工兜底。
+        - article [ref=e293]:
+          - generic [ref=e294]:
+            - generic:
+              - heading "售后与订单状态 warning" [level=4]:
+                - text: 售后与订单状态
+                - generic [ref=e295]: warning
+              - paragraph: 改约、取消、退款、联系客服是否清晰可执行。
+            - generic [ref=e296]:
+              - slider [ref=e297]: "0"
+              - generic [ref=e298]: 未评
+            - generic [ref=e299]:
+              - generic [ref=e300]:
+                - generic [ref=e301]: report
+                - text: High Risk
+              - combobox [ref=e302]:
+                - option "P0"
+                - option "P1"
+                - option "P2" [selected]
+          - generic [ref=e303]:
+            - generic [ref=e304]:
+              - text: 证据
+              - textbox "证据" [ref=e305]:
+                - /placeholder: 页面、接口、截图、访谈记录
+            - generic [ref=e306]:
+              - text: 风险
+              - textbox "风险" [ref=e307]:
+                - /placeholder: 对成交/调用的影响
+            - generic [ref=e308]:
+              - text: 行动建议
+              - textbox "行动建议" [ref=e309]:
+                - /placeholder: 补齐订单状态和售后动作。
+        - article [ref=e310]:
+          - generic [ref=e311]:
+            - generic:
+              - heading "页面与表单体验 warning" [level=4]:
+                - text: 页面与表单体验
+                - generic [ref=e312]: warning
+              - paragraph: 视觉是否可信，表单是否过重，移动端状态是否完整。
+            - generic [ref=e313]:
+              - slider [ref=e314]: "2"
+              - generic [ref=e315]: "2"
+            - generic [ref=e316]:
+              - generic [ref=e317]:
+                - generic [ref=e318]: report
+                - text: High Risk
+              - combobox [ref=e319]:
+                - option "P0"
+                - option "P1" [selected]
+                - option "P2"
+          - generic [ref=e320]:
+            - generic [ref=e321]:
+              - text: 证据
+              - textbox "证据" [ref=e322]:
+                - /placeholder: 页面、接口、截图、访谈记录
+                - text: 页面表单字段密集，移动端确认状态弱。
+            - generic [ref=e323]:
+              - text: 风险
+              - textbox "风险" [ref=e324]:
+                - /placeholder: 对成交/调用的影响
+                - text: 用户完成率和 Agent 可控性都偏低。
+            - generic [ref=e325]:
+              - text: 行动建议
+              - textbox "行动建议" [ref=e326]:
+                - /placeholder: 重做关键页面层级，减少字段，补齐状态反馈。
+                - text: 重做关键页面层级，减少人工填写字段。
+      - generic [ref=e327]:
+        - generic [ref=e328]:
+          - paragraph [ref=e329]: Overall Readiness
+          - generic [ref=e330]:
+            - strong [ref=e331]: "14"
+            - generic [ref=e332]: / 100
+        - generic [ref=e334]: D
+    - complementary [ref=e99]:
+      - generic [ref=e335]:
+        - heading "Context Panel" [level=2] [ref=e336]
+        - paragraph [ref=e337]: 烟测医美预约小程序
+      - navigation [ref=e338]:
+        - button "info Project File" [ref=e339] [cursor=pointer]:
+          - generic [ref=e340]: info
+          - text: Project File
+        - button "analytics Diagnostic" [ref=e341] [cursor=pointer]:
+          - generic [ref=e342]: analytics
+          - text: Diagnostic
+        - button "auto_fix_high Transformation" [ref=e343] [cursor=pointer]:
+          - generic [ref=e344]: auto_fix_high
+          - text: Transformation
+        - button "menu_book Evidence" [ref=e345] [cursor=pointer]:
+          - generic [ref=e346]: menu_book
+          - text: Evidence
+        - button "description Reports" [ref=e347] [cursor=pointer]:
+          - generic [ref=e348]: description
+          - text: Reports
+      - generic [ref=e349]:
+        - heading "Health Score" [level=3] [ref=e350]
+        - generic [ref=e351]:
+          - strong [ref=e352]: "14"
+          - generic [ref=e353]: / 100
+        - paragraph [ref=e356]: 3/9 scored · 0 missing evidence · 1 evidence records
+      - generic [ref=e357]:
+        - heading "warning Risk Alert" [level=3] [ref=e358]:
+          - generic [ref=e359]: warning
+          - text: Risk Alert
+        - paragraph [ref=e360]:
+          - strong [ref=e361]: 业务数据结构化
+          - text: Agent 无法可靠筛选可预约项目。
+      - generic [ref=e362]:
+        - heading "真实工具接口" [level=3] [ref=e363]
+        - generic [ref=e364]:
+          - generic [ref=e365]:
+            - generic [ref=e366]: 未配置
+            - paragraph [ref=e367]: 微信小程序源码与页面结构分析
+            - code [ref=e368]: WECHAT_MINIPROGRAM_APPID, WECHAT_MINIPROGRAM_ACCESS_TOKEN
+          - generic [ref=e369]:
+            - generic [ref=e370]: 未配置
+            - paragraph [ref=e371]: 商品/服务目录结构化
+            - code [ref=e372]: CATALOG_API_BASE_URL, CATALOG_API_TOKEN
+          - generic [ref=e373]:
+            - generic [ref=e374]: 未配置
+            - paragraph [ref=e375]: 预约/号源实时状态
+            - code [ref=e376]: BOOKING_API_BASE_URL, BOOKING_API_TOKEN
+          - generic [ref=e377]:
+            - generic [ref=e378]: 未配置
+            - paragraph [ref=e379]: 小程序 UI 体验升级审查
+            - code [ref=e380]: DESIGN_AUDIT_PROVIDER, DESIGN_AUDIT_API_KEY
+  - generic [ref=e146]:
+    - generic [ref=e147]: check_circle
+    - generic [ref=e148]:
+      - strong [ref=e149]: Saved
+      - paragraph [ref=e150]: Changes persisted to backend.

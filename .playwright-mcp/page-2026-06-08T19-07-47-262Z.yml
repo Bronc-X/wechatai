@@ -1,0 +1,161 @@
+- generic [active] [ref=e1]:
+  - banner [ref=e2]:
+    - generic [ref=e3]:
+      - generic [ref=e4]: Transformation Toolkit
+      - navigation [ref=e5]:
+        - button "Dashboard" [ref=e6] [cursor=pointer]
+        - button "Inventory" [ref=e7] [cursor=pointer]
+        - button "Archive" [ref=e8] [cursor=pointer]
+        - button "Settings" [ref=e9] [cursor=pointer]
+    - generic [ref=e10]:
+      - generic "搜索项目" [ref=e11]:
+        - generic [ref=e12]: search
+        - textbox "搜索项目" [ref=e13]:
+          - /placeholder: Search projects...
+      - button "通知" [ref=e14] [cursor=pointer]:
+        - generic [ref=e15]: notifications
+      - button "帮助" [ref=e16] [cursor=pointer]:
+        - generic [ref=e17]: help_outline
+      - generic [ref=e19]: person
+  - complementary [ref=e20]:
+    - generic [ref=e21]:
+      - generic [ref=e23]: robot_2
+      - generic [ref=e24]:
+        - heading "Mini-Program Agent" [level=1] [ref=e25]
+        - paragraph [ref=e26]: V2.4 Transformation
+    - button "add New Project" [ref=e27] [cursor=pointer]:
+      - generic [ref=e28]: add
+      - text: New Project
+    - navigation [ref=e29]:
+      - button "folder Projects" [ref=e30] [cursor=pointer]:
+        - generic [ref=e31]: folder
+        - text: Projects
+      - button "info Project File" [ref=e32] [cursor=pointer]:
+        - generic [ref=e33]: info
+        - text: Project File
+      - button "analytics Diagnostic" [ref=e34] [cursor=pointer]:
+        - generic [ref=e35]: analytics
+        - text: Diagnostic
+      - button "auto_fix_high Transformation" [ref=e36] [cursor=pointer]:
+        - generic [ref=e37]: auto_fix_high
+        - text: Transformation
+      - button "menu_book Evidence" [ref=e38] [cursor=pointer]:
+        - generic [ref=e39]: menu_book
+        - text: Evidence
+      - button "description Reports" [ref=e40] [cursor=pointer]:
+        - generic [ref=e41]: description
+        - text: Reports
+    - generic [ref=e42]:
+      - button "library_books Documentation" [ref=e43] [cursor=pointer]:
+        - generic [ref=e44]: library_books
+        - text: Documentation
+      - button "contact_support Support" [ref=e45] [cursor=pointer]:
+        - generic [ref=e46]: contact_support
+        - text: Support
+  - generic [ref=e47]:
+    - main [ref=e48]:
+      - generic [ref=e49]:
+        - generic [ref=e50]:
+          - heading "Active Projects" [level=2] [ref=e51]
+          - paragraph [ref=e52]: Overview of transformation pipelines.
+        - generic [ref=e53]:
+          - button "upload_file Import JSON" [ref=e54] [cursor=pointer]:
+            - generic [ref=e55]: upload_file
+            - text: Import JSON
+          - button "add New Project" [ref=e56] [cursor=pointer]:
+            - generic [ref=e57]: add
+            - text: New Project
+      - generic [ref=e58]:
+        - article [ref=e61] [cursor=pointer]:
+          - generic [ref=e62]:
+            - generic [ref=e63]:
+              - generic [ref=e65]: storefront
+              - generic [ref=e66]:
+                - heading "烟测医美预约小程序" [level=3] [ref=e67]
+                - paragraph [ref=e68]: 医美预约 · Agent Ready
+            - generic [ref=e69]: 基础未就绪
+          - generic [ref=e71]:
+            - generic [ref=e72]: Transformation Score
+            - strong [ref=e73]: 14/100
+          - generic [ref=e76]:
+            - generic [ref=e77]:
+              - generic [ref=e78]: AF
+              - generic [ref=e79]: Updated 4h ago
+            - generic [ref=e80]: arrow_forward
+        - complementary [ref=e81]:
+          - generic [ref=e82]:
+            - heading "Pipeline Summary" [level=3] [ref=e83]
+            - generic [ref=e84]:
+              - generic [ref=e85]:
+                - strong [ref=e86]: "0"
+                - text: PENDING
+              - generic [ref=e87]:
+                - strong [ref=e88]: "1"
+                - text: ACTION
+              - generic [ref=e89]:
+                - strong [ref=e90]: "0"
+                - text: READY
+          - generic [ref=e91]:
+            - heading "Recent Activity" [level=3] [ref=e92]
+            - generic [ref=e94]:
+              - generic [ref=e96]: check
+              - generic [ref=e97]:
+                - strong [ref=e98]: Health Score Generated
+                - text: 烟测医美预约小程序 · 4h ago
+    - complementary [ref=e99]:
+      - generic [ref=e100]:
+        - heading "Context Panel" [level=2] [ref=e101]
+        - paragraph [ref=e102]: 烟测医美预约小程序
+      - navigation [ref=e103]:
+        - button "info Project File" [ref=e104] [cursor=pointer]:
+          - generic [ref=e105]: info
+          - text: Project File
+        - button "analytics Diagnostic" [ref=e106] [cursor=pointer]:
+          - generic [ref=e107]: analytics
+          - text: Diagnostic
+        - button "auto_fix_high Transformation" [ref=e108] [cursor=pointer]:
+          - generic [ref=e109]: auto_fix_high
+          - text: Transformation
+        - button "menu_book Evidence" [ref=e110] [cursor=pointer]:
+          - generic [ref=e111]: menu_book
+          - text: Evidence
+        - button "description Reports" [ref=e112] [cursor=pointer]:
+          - generic [ref=e113]: description
+          - text: Reports
+      - generic [ref=e114]:
+        - heading "Health Score" [level=3] [ref=e115]
+        - generic [ref=e116]:
+          - strong [ref=e117]: "14"
+          - generic [ref=e118]: / 100
+        - paragraph [ref=e121]: 3/9 scored · 0 missing evidence · 1 evidence records
+      - generic [ref=e122]:
+        - heading "warning Risk Alert" [level=3] [ref=e123]:
+          - generic [ref=e124]: warning
+          - text: Risk Alert
+        - paragraph [ref=e125]:
+          - strong [ref=e126]: 业务数据结构化
+          - text: Agent 无法可靠筛选可预约项目。
+      - generic [ref=e127]:
+        - heading "真实工具接口" [level=3] [ref=e128]
+        - generic [ref=e129]:
+          - generic [ref=e130]:
+            - generic [ref=e131]: 未配置
+            - paragraph [ref=e132]: 微信小程序源码与页面结构分析
+            - code [ref=e133]: WECHAT_MINIPROGRAM_APPID, WECHAT_MINIPROGRAM_ACCESS_TOKEN
+          - generic [ref=e134]:
+            - generic [ref=e135]: 未配置
+            - paragraph [ref=e136]: 商品/服务目录结构化
+            - code [ref=e137]: CATALOG_API_BASE_URL, CATALOG_API_TOKEN
+          - generic [ref=e138]:
+            - generic [ref=e139]: 未配置
+            - paragraph [ref=e140]: 预约/号源实时状态
+            - code [ref=e141]: BOOKING_API_BASE_URL, BOOKING_API_TOKEN
+          - generic [ref=e142]:
+            - generic [ref=e143]: 未配置
+            - paragraph [ref=e144]: 小程序 UI 体验升级审查
+            - code [ref=e145]: DESIGN_AUDIT_PROVIDER, DESIGN_AUDIT_API_KEY
+  - generic [ref=e146]:
+    - generic [ref=e147]: check_circle
+    - generic [ref=e148]:
+      - strong [ref=e149]: Saved
+      - paragraph [ref=e150]: Changes persisted to backend.
