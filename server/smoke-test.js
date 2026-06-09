@@ -88,7 +88,7 @@ async function main() {
 
     if (updated.project.computed.score.answered !== 3) throw new Error("Score not computed");
     const report = await request(`/api/projects/${id}/report`, { headers: { accept: "text/markdown" } });
-    for (const phrase of ["Agent-ready 改造交付报告", "烟测口腔预约小程序", "优先行动清单", "洁牙详情页"]) {
+    for (const phrase of ["智能体就绪改造交付报告", "烟测口腔预约小程序", "优先行动清单", "洁牙详情页"]) {
       if (!report.includes(phrase)) throw new Error(`Report missing ${phrase}`);
     }
 

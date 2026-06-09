@@ -3,11 +3,8 @@
   <head>
     <meta charset="utf-8" />
     <meta name="viewport" content="width=device-width, initial-scale=1" />
-    <title>Transformation Toolkit - Mini-Program Agent</title>
+    <title>小程序改造工具台</title>
     <link rel="icon" href="data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 64 64'%3E%3Crect width='64' height='64' rx='14' fill='%232563eb'/%3E%3Cpath d='M18 22h28M18 32h20M18 42h24' stroke='white' stroke-width='5' stroke-linecap='round'/%3E%3C/svg%3E" />
-    <link rel="preconnect" href="https://fonts.googleapis.com" />
-    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
-    <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;600;700;900&display=swap" rel="stylesheet" />
     <link href="https://fonts.googleapis.com/css2?family=Material+Symbols+Outlined:wght,FILL@100..700,0..1&display=swap" rel="stylesheet" />
     <style>
       :root {
@@ -61,7 +58,7 @@
           radial-gradient(circle at 92% 8%, rgba(0, 106, 97, 0.08), transparent 22%),
           linear-gradient(135deg, #faf8ff 0%, #f3f3fe 100%);
         color: var(--on-background);
-        font-family: Inter, "Microsoft YaHei", "PingFang SC", sans-serif;
+        font-family: "Segoe UI", "Microsoft YaHei UI", "Microsoft YaHei", "PingFang SC", "Noto Sans CJK SC", "Source Han Sans SC", Arial, sans-serif;
         font-size: 16px;
         line-height: 1.6;
         overflow: hidden;
@@ -209,6 +206,30 @@
       .icon-btn:hover {
         background: rgba(0, 74, 198, 0.05);
         color: var(--primary);
+      }
+
+      .locale-switch {
+        display: inline-flex;
+        gap: 4px;
+        padding: 4px;
+        border-radius: 999px;
+      }
+
+      .locale-switch button {
+        border: 0;
+        border-radius: 999px;
+        background: transparent;
+        color: var(--on-surface-variant);
+        padding: 6px 10px;
+        font-size: 12px;
+        line-height: 1;
+        font-weight: 800;
+        letter-spacing: 0.05em;
+      }
+
+      .locale-switch button.active {
+        background: var(--primary);
+        color: var(--on-primary);
       }
 
       .sidebar {
@@ -808,16 +829,20 @@
   <body>
     <header class="topbar">
       <div style="display:flex;align-items:center;min-width:0;">
-        <div class="brand-title">Transformation Toolkit</div>
+        <div class="brand-title" data-i18n="brand">小程序改造工具台</div>
         <nav class="top-links" id="topLinks"></nav>
       </div>
       <div class="top-actions">
-        <label class="search glass-input" aria-label="搜索项目">
+        <label class="search glass-input" id="searchLabel" aria-label="搜索项目">
           <span class="material-symbols-outlined">search</span>
-          <input id="searchInput" placeholder="Search projects..." />
+          <input id="searchInput" placeholder="搜索项目..." />
         </label>
-        <button class="icon-btn" type="button" aria-label="通知"><span class="material-symbols-outlined">notifications</span></button>
-        <button class="icon-btn" type="button" aria-label="帮助"><span class="material-symbols-outlined">help_outline</span></button>
+        <div class="locale-switch glass-input" aria-label="系统语言">
+          <button class="active" id="localeZh" type="button" data-locale="zh">ZH</button>
+          <button id="localeEn" type="button" data-locale="en">EN</button>
+        </div>
+        <button class="icon-btn" id="noticeBtn" type="button" aria-label="通知"><span class="material-symbols-outlined">notifications</span></button>
+        <button class="icon-btn" id="helpBtn" type="button" aria-label="帮助"><span class="material-symbols-outlined">help_outline</span></button>
         <div class="tile-icon" style="width:32px;height:32px;border-radius:999px;"><span class="material-symbols-outlined" style="font-size:18px;">person</span></div>
       </div>
     </header>
@@ -826,15 +851,15 @@
       <div class="side-head">
         <div class="logo"><span class="material-symbols-outlined" style="font-variation-settings:'FILL' 1;">robot_2</span></div>
         <div>
-          <h1>Mini-Program Agent</h1>
-          <p>V2.4 Transformation</p>
+          <h1 data-i18n="productName">小程序智能体</h1>
+          <p data-i18n="productVersion">V2.4 改造工作台</p>
         </div>
       </div>
-      <button class="primary-btn" id="newBtn" type="button"><span class="material-symbols-outlined">add</span>New Project</button>
+      <button class="primary-btn" id="newBtn" type="button"><span class="material-symbols-outlined">add</span><span data-i18n="newProject">新建项目</span></button>
       <nav class="nav-list" id="leftNav"></nav>
       <div style="border-top:1px solid rgba(195,198,215,.42);padding-top:8px;display:grid;gap:4px;">
-        <button class="nav-item" type="button"><span class="material-symbols-outlined">library_books</span>Documentation</button>
-        <button class="nav-item" type="button"><span class="material-symbols-outlined">contact_support</span>Support</button>
+        <button class="nav-item" type="button"><span class="material-symbols-outlined">library_books</span><span data-i18n="docs">文档</span></button>
+        <button class="nav-item" type="button"><span class="material-symbols-outlined">contact_support</span><span data-i18n="support">支持</span></button>
       </div>
       <input class="hidden" id="importFile" type="file" accept="application/json,.json" />
     </aside>
@@ -847,8 +872,8 @@
     <div class="toast glass-panel" id="toast">
       <span class="material-symbols-outlined" style="color:var(--secondary);font-variation-settings:'FILL' 1;">check_circle</span>
       <div>
-        <strong id="toastTitle">Saved</strong>
-        <p class="subtle" id="toastBody">Changes persisted to backend.</p>
+        <strong id="toastTitle">已保存</strong>
+        <p class="subtle" id="toastBody">变更已持久化到后端。</p>
       </div>
     </div>
 

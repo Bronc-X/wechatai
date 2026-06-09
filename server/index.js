@@ -200,15 +200,16 @@ function integrationResult(definition, body) {
   };
 }
 
-function buildReport(project) {
+function buildReport(project, locale = "zh") {
+  if (locale === "en") return buildEnglishReport(project);
   const score = readinessScore(project);
   const lines = [];
-  lines.push(`# ${project.client.name || "未命名小程序"} Agent-ready 改造交付报告`);
+  lines.push(`# ${project.client.name || "未命名小程序"} 智能体就绪改造交付报告`);
   lines.push("");
   lines.push(`- 行业：${project.client.industry || "未填写"}`);
   lines.push(`- 业务目标：${project.client.goal || "未填写"}`);
   lines.push(`- 交付负责人：${project.client.owner || "未填写"}`);
-  lines.push(`- Agent-ready 分数：${score.points}/${score.max} (${score.percent}%)`);
+  lines.push(`- 智能体就绪分数：${score.points}/${score.max} (${score.percent}%)`);
   lines.push(`- 结论：${statusFor(score)}`);
   lines.push("");
   lines.push("## 执行摘要");
@@ -241,6 +242,75 @@ function buildReport(project) {
   appendEvidence(lines, "数据证据", project.evidence.data, [["entity", "对象"], ["fields", "字段"], ["source", "来源"], ["gap", "缺口"]]);
   appendEvidence(lines, "权限证据", project.evidence.permissions, [["action", "动作"], ["data", "数据"], ["confirm", "确认"], ["risk", "风险"]]);
   return lines.join("\n");
+}
+
+function buildEnglishReport(project) {
+  const score = readinessScore(project);
+  const lines = [];
+  lines.push(`# ${project.client.name || "Untitled Mini-Program"} Agent-ready Transformation Report`);
+  lines.push("");
+  lines.push(`- Industry: ${project.client.industry || "Not provided"}`);
+  lines.push(`- Business goal: ${project.client.goal || "Not provided"}`);
+  lines.push(`- Delivery owner: ${project.client.owner || "Not provided"}`);
+  lines.push(`- Agent-ready score: ${score.points}/${score.max} (${score.percent}%)`);
+  lines.push(`- Conclusion: ${statusForEnglish(score)}`);
+  lines.push("");
+  lines.push("## Executive Summary");
+  lines.push(project.client.summary || "Not provided.");
+  lines.push("");
+  lines.push("## Current Journey and Business Value");
+  lines.push(`- Current journey: ${project.client.currentPath || "Not provided"}`);
+  lines.push(`- Business value: ${project.client.businessValue || "Not provided"}`);
+  lines.push("");
+  lines.push("## Priority Action List");
+  const risks = topRisks(project);
+  if (!risks.length) lines.push("None.");
+  risks.forEach(({ check, answer }, index) => {
+    const label = englishCheck(check);
+    lines.push(`${index + 1}. ${answer.priority} · ${label.name}: ${answer.risk || answer.action || label.recommendation}`);
+  });
+  lines.push("");
+  lines.push("## Diagnostic Details");
+  checks.forEach((check) => {
+    const answer = project.answers[check.id];
+    const label = englishCheck(check);
+    lines.push(`### ${label.name}`);
+    lines.push(`- Score: ${answer.score === "" ? "Not scored" : `${answer.score}/5`}`);
+    lines.push(`- Priority: ${answer.priority}`);
+    lines.push(`- Evidence: ${answer.evidence || "Missing evidence"}`);
+    lines.push(`- Risk: ${answer.risk || "Not provided"}`);
+    lines.push(`- Action: ${answer.action || label.recommendation}`);
+    lines.push("");
+  });
+  appendEvidence(lines, "Page Evidence", project.evidence.pages, [["name", "Page"], ["path", "Path"], ["finding", "Finding"], ["impact", "Impact"]]);
+  appendEvidence(lines, "Flow Evidence", project.evidence.flows, [["name", "Flow"], ["steps", "Steps"], ["friction", "Friction"], ["target", "Target state"]]);
+  appendEvidence(lines, "Data Evidence", project.evidence.data, [["entity", "Entity"], ["fields", "Fields"], ["source", "Source"], ["gap", "Gap"]]);
+  appendEvidence(lines, "Permission Evidence", project.evidence.permissions, [["action", "Action"], ["data", "Data"], ["confirm", "Confirmation"], ["risk", "Risk"]]);
+  return lines.join("\n");
+}
+
+function statusForEnglish(score) {
+  if (!score.answered) return "Not evaluated";
+  if (score.percent < 35) return "Not ready";
+  if (score.percent < 60) return "Needs core transformation";
+  if (score.percent < 82) return "Ready for pilot";
+  return "Highly ready";
+}
+
+function englishCheck(check) {
+  const labels = {
+    data: ["Structured Business Data", "Normalize the service schema and expose readable fields and APIs."],
+    intent: ["User Intent Mapping", "Build an intent dictionary, parameter mapping, and missing-field follow-ups."],
+    flow: ["Short Critical Flows", "Compress the journey into candidate options, confirmation, and submission."],
+    realtime: ["Real-Time State Trust", "Connect real-time pricing, scheduling, inventory, and business status."],
+    auth: ["Clear Authorization Boundaries", "Move authorization to necessary moments and keep a path after failure."],
+    confirm: ["Pre-Payment Confirmation", "Create a unified confirmation page and require user confirmation for critical actions."],
+    recovery: ["Exception Recovery", "Design alternatives, draft recovery, and human fallback."],
+    after: ["After-Sales and Order State", "Complete order states and after-sales actions."],
+    ui: ["Page and Form Experience", "Redesign key page hierarchy, reduce fields, and complete state feedback."]
+  };
+  const [name, recommendation] = labels[check.id] || [check.name, check.recommendation];
+  return { name, recommendation };
 }
 
 function appendEvidence(lines, title, rows, columns) {
@@ -351,7 +421,7 @@ async function routeApi(req, res, url) {
     const db = await readDb();
     const project = db.projects.find((item) => item.id === id);
     if (!project) return sendJson(res, 404, { error: "Project not found" });
-    return sendText(res, 200, buildReport(project), "text/markdown; charset=utf-8");
+    return sendText(res, 200, buildReport(project, url.searchParams.get("locale") === "en" ? "en" : "zh"), "text/markdown; charset=utf-8");
   }
 
   if (req.method === "POST" && url.pathname === "/api/import") {
